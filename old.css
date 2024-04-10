@@ -1,4 +1,4 @@
-@charset "UTF-8";html,body,div{
+@charset "UTF-8";html,body,div,h1,p,a,img,strong,ul,li,nav {
     border: 0;
     font-size: 100%;
     font: inherit;
@@ -13,6 +13,10 @@ nav {
 
 body {
     line-height: 1
+}
+
+ol,ul {
+    list-style: none
 }
 
 :root {
@@ -44,7 +48,7 @@ body {
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 html {
@@ -62,7 +66,12 @@ body {
 }
 
 strong {
-    font-weight: 800
+    font-weight: 900
+}
+
+indent {
+    position: relative;
+    left: 30px;
 }
 
 a {
@@ -88,6 +97,18 @@ a:active {
     background: var(--primary-color)
 }
 
+h1 {
+    font-weight: 900;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1em
+}
+
+.spaced-list>li {
+    margin-bottom: 1em
+}
+
 .flex {
     display: flex
 }
@@ -108,6 +129,15 @@ a:active {
     transition: background .1s ease-out
 }
 
+.logo:hover,.logo:focus {
+    background: 0 0;
+    outline: none
+}
+
+.logo:hover .logo__image,.logo:focus .logo__image {
+    background: var(--logo-hover-color)
+}
+
 .nav {
     margin-left: auto;
     margin-right: auto;
@@ -122,8 +152,7 @@ a:active {
 }
 
 .nav__logo {
-    margin-inline-end:1rem
-}
+    margin-inline-end:1rem}
 
 .nav__logo:hover,.nav__logo:active {
     background: inherit
@@ -173,11 +202,24 @@ a:active {
     overflow-wrap: anywhere
 }
 
-.content-page p,.content-page ul,.content-page ol,.content-page blockquote,.content-page pre,.content-page hr,.content-page table,.content-page iframe {
+.content-page h1,.content-page p,.content-page ul {
+    margin-bottom: 1.5rem
+}
+
+.content-page h1 {
+    line-height: 1.25em
+}
+
+.content-page p,.content-page ul {
     line-height: 1.75em
 }
 
-.content-page ul,.content-page ol {
+
+.content-page h1 {
+    margin-top: 0
+}
+
+.content-page ul {
     padding-left: 1em;
     padding-right: 1em
 }
@@ -186,11 +228,11 @@ a:active {
     list-style-type: square
 }
 
-.content-page ol>li {
-    list-style-type: decimal
-}
-
-.content-page li ul,.content-page li ol {
+.content-page li ul {
     padding-left: 2em;
     padding-right: 2em
+}
+
+.content-page img {
+    max-width: 100%
 }
