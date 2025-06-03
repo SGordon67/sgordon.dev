@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang=en>
+    <head>
+        <meta name=generator>
+        <meta charset=utf-8>
+        <title>Scott Gordon</title>
+        <link rel=stylesheet href=./index.css>
+        <link rel=icon href=./resources/sg_logo_white_wide.png type=image/png>
+        <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    </head>
+    <body>
+        <nav class=nav>
+            <a href=./ class=nav__logo>
+                <img src=./resources/sg_logo_white_wide.png class="logo__image drkIMG" alt="Scott Gordon" loading=lazy>
+                <img src=./resources/sg_logo_black_wide.png class="logo__image lgtIMG" alt="Scott Gordon" loading=lazy>
+            </a>
+            <div class=nav__links>
+                <a href=./contact.html>Contact</a>
+                <a href=./projects.html>Projects</a>
+                <a href=./experience.html>Experience</a>
+            </div>
+        </nav>
+        <main class=content-page>
+			<h2 id=SnakeAI>Snake AI</h2>
+			<p>
+				You can find the code for this project on my <a href=https://github.com/SGordon67/SnakeAI>github</a>.<br>
+				<a href=./SnakeAI.html#QLR>Sample output</a> can be found below the project description.
+			</p>
+			<p>
+				&emsp;This project was created to better understand of the AI Q-Learning algorithm
+				and how it compares to the classic A* algorithm.
+				The idea was to create a simple game of snake from the ground up in C++ and have
+				the pathfinding algorithms determine how the snake should move.
+				I chose to use the command line and terminal output to display the board state instead of a GUI
+				to keep things simple and within scope.
+			</p>
+			<p>
+				&emsp;There is one clear limitation to my implementation.
+				The path calculation is done at the start of the program, and each time a new apple is generated.
+				This means the snake 'thinks' the apple is unreachable if its body is temporarily blocking its path
+				at the time of generation. This can be fixed in future version should I chose to develope this further.
+				One potential fix would be to recalculate the optimal path after each step, and pair that with
+				moving towards the tail of the snake instead of giving up.
+			</p>
+			<h2 id=QLR>Q-Learning</h2>
+			<object type="image/svg+xml" data="./resources/QLR.svg" height="405px"></object>
+			<p>
+				&emsp;This algorithm appears to play more like a human than the other ones, at least in my opinion.
+				The snake will take what seems like a middle ground between the direct diagnoal path of 
+				Euclidean distance A* and the block pathing of Manhattan distance A*.
+				The clear downside is that the calculation takes some time to process which is why you can
+				see the snake pause after eating each apple.
+			</p>
+			<h2 id=EDA>A* with Euclidean distance</h2>
+			<object type="image/svg+xml" data="./resources/EDA.svg" height="405px"></object>
+			<p>
+				&emsp;This algorithm is running using the Euclidean distance metric, which will translate into
+				the snake taking a more diagonal path through the grid. In my test for this showcase, this 
+				algorithm scored the highest, but I want to note that there is a lot of variance due to the 
+				apples being generated randomely. This run just happened to get lucky with apple positions.
+				<h2 id=MDA>A* with Manhattan distance</h2>
+				<object type="image/svg+xml" data="./resources/MDA.svg" height="405px"></object>
+			<p>
+				&emsp;This algorithm is running using the Manhattan distance metric, which translates to a
+				blocky type of movement. The snake will move over to the correct column, then go right up or down
+				to the apple with minimal diagonal movement.
+			</p>
+        </main>
+    </body>
+
+
+</html>
