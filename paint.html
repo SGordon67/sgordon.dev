@@ -1,0 +1,81 @@
+<!--
+Scott Gordon
+paint.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<title>SG - Paint</title>
+		<meta name=generator>
+		<meta charset=utf-8>
+		<link rel=stylesheet href=./index.css>
+		<link rel=icon href=./resources/sg_logo_white_wide.png type=image/png>
+		<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	</head>
+
+	<nav class=nav>
+		<a href=./ class=nav__logo>
+			<img src=./resources/sg_logo_white_wide.png class="logo__image drkIMG" alt="Scott Gordon" loading=lazy>
+			<img src=./resources/sg_logo_black_wide.png class="logo__image lgtIMG" alt="Scott Gordon" loading=lazy>
+		</a>
+		<div class=nav__links>
+			<a href=./contact.html>Contact</a>
+			<a href=./projects.html>Projects</a>
+			<a href=./experience.html>Experience</a>
+		</div>
+	</nav>
+	<main class=content-page>
+		<h2 id=paintHeader>Custom Paint</h2>
+		<button type="button" id="newButton">New</button>
+		<button type="button" id="saveButton">Save</button>
+		<button type="button" id="loadButton">Load</button>
+		<button type="button" id="saveAsImageButton">Save as Image</button>
+		<button type="button" id="copyButton">Copy</button>
+		<button type="button" id="pasteButton">Paste</button>
+		<button type="button" id="undoButton">Undo</button>
+		<br>
+		<canvas id="can" width="1000" height="600">
+			Oops ... your browser doesn't support the HTML5 canvas element
+		</canvas><br>
+
+		<div class="paintContainer">
+			<div class="optionsLeft">
+				<form id = "functions">
+					Select a function:
+					<br>
+					<input type="radio" id="newShape" name="function" value="newShape" checked>
+					<label for="newShape">New Shape</label><br>
+					<input type="radio" id="select" name="function" value="select">
+					<label for="select">Select</label><br><br>
+
+					<input type="radio" id="translate" name="function" value="translate">
+					<label for="translate">Translate</label><br>
+					<input type="radio" id="scale" name="function" value="scale">
+					<label for="scale">Scale</label><br>
+					<input type="radio" id="rotate" name="function" value="rotate">
+					<label for="rotate">Rotate</label>
+				</form>
+				<!--<p id = tester>result test</p>-->
+			</div>
+			<div class="optionsRight">
+				<label for="shapes">Select a shape:</label><br>
+				<select name="shapes" id="shapes">
+					<option value="line">Line</option>
+					<option value="triangle">Triangle</option>
+					<option value="square">Square</option>
+					<option value="rectangle">Rectangle</option>
+					<option value="circle">Circle</option>
+					<option value="ellipse">Ellipse</option>
+					<option value="curve">Curve</option>
+					<option value="polyLine">Poly-Line</option>
+					<option value="polygon">Polygon</option>
+				</select><br>
+				<button type="button" id="endPolyLine">End Poly-Line</button>
+				<button type="button" id="endPolygon">End Polygon</button><br>
+				Select a color:<br><input type="color" id="sColor" name="sColor" value="#364e96"><br>
+			</div>
+		</div>
+		<script type="text/javascript" src="paint.js"></script>
+	</main>
+</html>
